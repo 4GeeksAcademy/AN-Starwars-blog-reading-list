@@ -1,26 +1,312 @@
-/* 
-    General Styles
-*/
-.card-img-top {
-    background-color: #ccc;
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    --animate-duration: 2000ms;
+    --animate-delay: 5s;
+  }
+  
+  body {
+    background-color: rgb(34, 37, 41);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  footer {
+    bottom: 0;
     width: 100%;
-    height: 300px;
+    color: darkgoldenrod;
+    margin-top: auto;
+  }
+  .navbar-logo {
+    width: 400px;
+    height: auto;
+    filter: drop-shadow(0px 0px 25px #ffffffc9);
+    transition: filter 0.3s ease, 0.3s ease;
+  }
+  
+  .navbar-logo:hover {
+    filter: drop-shadow(0px 0px 35px #ffffff);
+  }
+  
+  .navlink {
+    color: darkgoldenrod;
+    transition: filter 0.3s ease, 0.3s ease;
+  }
+  .navlink:hover {
+    color: rgb(238, 199, 102);
+    filter: drop-shadow(0px 0px 15px #ffffff);
+  }
+  .active-link {
+    color: rgb(255, 230, 153);
+  }
+  
+  .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el video para cubrir toda el área */
+    z-index: -1;
+  }
+  
+  .card {
+    transition: transform 0.6s ease, 0.3s ease;
+    background-color: rgba(58, 58, 58, 0.483);
+    color: rgb(255, 219, 129);
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    opacity: 100%;
+  
+    
+  }
+  
+  .death {
+    
+    transition: filter 0.3s ease, 0.3s ease;
+  }
+  .deathdiv {
+    padding-bottom: 100px;
+    margin-top: 50px;
+  }
+  .death:hover {
+    filter: drop-shadow(0px 0px 100px #ffffff);
+  }
+  
+  /*LOADER*/
+  .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+  
+    100% {
+      transform: scale(0);
+    }
+  }
+  
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+  
+  /*BOTON CARD*/
+  
+  .Btn {
+    margin-top: 10px;
+    /* width: 100px; */
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(
+      to right,
+      #77530a,
+      #ffd277,
+      #77530a,
+      #77530a,
+      #ffd277,
+      #77530a
+    );
+    background-size: 250%;
+    background-position: left;
+    color: #ffd277;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 1s;
+    overflow: hidden;
+  }
+  
+  .Btn::before {
+    position: absolute;
+    content: "INFO";
+    color: #ffd277;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 97%;
+    height: 90%;
     border-radius: 8px;
-}
+    transition-duration: 1s;
+    background-color: rgba(0, 0, 0, 0.842);
+    background-size: 200%;
+  }
+  
+  .Btn:hover {
+    background-position: right;
+    transition-duration: 1s;
+  }
+  
+  .Btn:hover::before {
+    background-position: right;
+    transition-duration: 1s;
+  }
+  
+  .Btn:active {
+    transform: scale(0.95);
+  }
+  
+  .cardimg {
+    transition: transform 0.6s ease, 0.3s ease;
+  }
+  
+  .cardimg:hover {
+    transform: scale(1.1);
+    overflow: hidden;
+  }
+  
+  /* texto SW */
+  
+  .animación {
+    width: 100%;
+    min-height: 80vh;
+    top: 0px;
+    position: absolute;
+    overflow: hidden;
+  }
+  
+  section {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 540px;
+    perspective: 300px;
+    color: #ffeaaa;
+    font-family: "Pathway Gotic One", sans-serif;
+    font-size: 70px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    line-height: 160%;
+    text-align: justify;
+  
+    opacity: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .contenido-texto {
+    
+    top: 100%;
+    font-size: inherit;
+    transform-origin: 40% 100%;
+    animation: movimiento 60s linear forwards;
+  }
+  
+  @keyframes movimiento {
+    0% {
+      top: 100%;
+      transform: rotateX(20deg) translateZ(0);
+      opacity: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      top: -100px;
+      transform: rotateX(30deg) translateY(-4700px);
+      opacity: 1;
+    }
+  }
+  
+  .jumbo {
+    background-color: rgba(57, 57, 57, 0.597);
+    border-radius: 20px;
+  }
+  
+  .imgjumbo{
+    overflow: hidden;  
+  }
+  
+  .info{
+    display: block;
+  }
+  
+  .textInfo{
+    
+    font-family:'Courier New', Courier, monospace;
+    
+  }
 
-.card-body {
+
+  .welcome-message h1 {
     text-align: center;
-}
-
-.card-title {
-    font-size: 1.2rem;
+    font-size: 2rem;
+    color: white;
+    margin-top: 20px;
+  }
+  
+  .star-wars-text {
+    text-align: center;
+    color: white;
+    font-family: 'Star Wars', sans-serif;
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+  
+  .star-wars-title {
+    font-size: 3rem;
     font-weight: bold;
-}
-
-.card-text .btn {
-    text-decoration: none;
-}
-
-.container {
-    max-width: 1200px;
-}
+  }
+  
+  .star-wars-subtitle {
+    font-size: 2rem;
+  }
+  
+  .star-wars-scroll {
+    font-size: 1.5rem;
+  }
+  

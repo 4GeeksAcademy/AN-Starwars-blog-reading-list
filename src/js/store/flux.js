@@ -1,121 +1,131 @@
+
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			],
+
 			characters: [],
 			vehicles: [],
 			planets: [],
 			favorites: [],
-			character: {}
+			character:{},
+			planet:{},
+			vehicle:{},
+			loading:false,
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			setLoading: (isLoading)=>{
+				setStore({ loading: isLoading})
 			},
-			changeColor: (index, color) => {
-				//get the store
+			getInitialCharacters: async () => {
 				const store = getStore();
+				if (store.characters.length > 0){
+					return;
+				}
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+				try {
+					setStore({ loading: true });
+					const response = await fetch(`https://www.swapi.tech/api/people`);
+					if (!response.ok) throw Error(`Personajes no encontrados`);
+					const data = await response.json();
+					setStore ({ characters: data.results });
+					} catch(error){
+						console.error(error)
+					} finally {
+						setStore({ loading: false});
+					}
 			},
-			getInitialCharacters: () => {
-				fetch(`https://www.swapi.tech/api/people`)
-					.then(res => {
-						if (!res.ok) throw Error(`Personajes no encontrados`)
-						return res.json();
-					})
-					.then(response => {
-						setStore({ characters: response.results });
-					})
-					.catch(error => console.error(error));
-			},
-			getCharactersByid: (uid) => {
-				fetch(`https://www.swapi.tech/api/people/${uid}`)
-					.then(res => {
-						if (!res.ok) throw Error(`Personaje no encontrado`)
-						return res.json();
-					})
-					.then(response => {
-						setStore({ character: response.result.properties });
-					})
-					.catch(error => console.error("fallo algo " + error));
-			},
-			getInitialStarships: () => {
-				fetch(`https://www.swapi.tech/api/Starships`)
-					.then(res => {
-						if (!res.ok) throw Error(`Vehiculos no encontrados`)
-						return res.json();
-					})
-					.then(response => {
-						setStore({ vehicles: response.results });
-					})
-					.catch(error => console.error(error));
-			},
-			getStarshipsByid: () => {
-				fetch(`https://www.swapi.tech/api/starships/${id}`)
-					.then(res => {
-						if (!res.ok) throw Error(`Vehiculo no encontrado`)
-						return res.json();
-					})
-					.then(response => {
-						setStore(response.result);
-					})
-					.catch(error => console.error(error));
-			},
-			getInitialPlanets: () => {
-				fetch(`https://www.swapi.tech/api/planets`)
-					.then(res => {
-						if (!res.ok) throw Error(`Planetas no encontrados`)
-						return res.json();
-					})
-					.then(response => {
-						setStore({ planets: response.results });
-					})
-					.catch(error => console.error(error));
-			},
-			getPlanetsByid: () => {
-				fetch(`https://www.swapi.tech/api/planets/${id}`)
-					.then(res => {
-						if (!res.ok) throw Error(`Personaje no encontrado`)
-						return res.json();
-					})
-					.then(response => {
-						setplanets(response.result);
-					})
-					.catch(error => console.error(error));
-			},
-			addFavorites: (newFavorite) => {
+			getCharactersByid: async (uid) => {
 				const store = getStore();
-				const favorite = store.favorites.concat(newFavorite);
-				setStore({ favorite: favorite });
+				if (store.character && store.character.uid === uid){
+					return;
+				}
+				try{ 
+					setStore({ loading: true});
+					const response = await fetch(`https://www.swapi.tech/api/people/${uid}`);
+					if (!response.ok) throw Error(`Personaje no encontrado`);
+					const data = await response.json();
+					setStore({ character: data.result.properties });
+					}
+					catch(error) {
+					console.error("fallo algo " + error);
+				} finally {
+					setStore({ loading: false});
+				}
 			},
-			removeFavorites: (index) => {
-				const store = getStore;
-				const favorite = store.favorite.filter((c, i) => {
-					return index !== i
-				});
-				setStore({ favorite: favorite });
-			}
+			getInitialVehicles: async () => {
+				const store = getStore();
+				if (store.vehicle.length > 0){
+					return;
+				}
+				try{
+					setStore({ loading: true});
+					const response = await fetch(`https://www.swapi.tech/api/vehicles`);
+					if (!response.ok) throw Error(`Vehiculos no encontrados`);
+					const data = await response.json();
+					setStore({ vehicles: data.results });
+					}
+					catch(error){
+					console.error(error);
+					} finally {
+						setStore({ loading: false});
+					}
+			},
+			getVehiclesByid: async (uid) => {
+				const store = getStore();
+				if (store.vehicle && store.vehicle.uid == uid){
+					return;
+				}
+				try {
+					setStore({ loading: true});
+					const response = await fetch(`https://www.swapi.tech/api/vehicles/${uid}`);
+					if (!response.ok) throw Error(`Vehiculo no encontrado`);
+					const data = await response.json();
+					setStore({ Vehicle: data.result.properties});
+					}
+					catch(error){
+					console.error(error);
+					} finally{
+						setStore({ loading: false});
+					}
+			},
+			getInitialPlanets: async () => {
+				const store = getStore();
+				if (store.planets.length > 0){
+					return;
+				}
+				try{
+					setStore({ loading: true});
+					const response = await fetch(`https://www.swapi.tech/api/planets`);
+					if (!response.ok) throw Error(`Planetas no encontrados`);
+					const data = await response.json();
+					setStore({ planets: data.results });
+					}
+					catch(error){
+					console.error(error);
+					} finally{
+						setStore({ loading: false});
+					}
+			},
+			getPlanetsByid: async (uid) => {
+				const store = getStore();
+				if (store.planet && store.planet.uid === uid){
+					return;
+				}
+				try{
+					setStore({ loading:true});
+					const response = await fetch(`https://www.swapi.tech/api/planets/${id}`);
+					if (!response.ok) throw Error(`Personaje no encontrado`);
+					const data = await response.json();
+					setStore({ planet: data.results.properties});
+					}
+					catch(error){
+					console.error(error);
+					} finally{
+						setStore({ loading: false});
+					}
+			},
+
 		}
 	};
 };

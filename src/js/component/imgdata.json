@@ -1,0 +1,158 @@
+{
+  "characters": [
+    {
+      "id": 1,
+      "name": "Luke Skywalker",
+      "image": "https://res-console.cloudinary.com/dslt9nebs/thumbnails/v1/image/upload/v1739280635/c3Rhci13YXJzLWx1a2Utc2t5d2Fsa2VyLTRrLW56bHRkMzAzYXgzaTI4NzJfenp6dnJz/template_primary/ZV9pbXByb3ZlLHdfMzAwLGhfNjAwLGNfdGh1bWIsZ19hdXRv"
+    },
+    {
+      "id": 2,
+      "name": "C-3PO",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1739280584/c-3po-1356-x-2412-wallpaper-oxp6hrumkgh8kyyw_awrm8q.webp"
+    },
+    {
+      "id": 3,
+      "name": "R2-D2",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1739280405/r2d2-q4ruddnr1tb8iaoo_zp8nq6.webp"
+    },
+    {
+      "id": 4,
+      "name": "Darth Vader",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1739280030/darth-vader_jjq5hq.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Leia Organa",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1739280482/princess-leia-star-wars-tablet-w8piixhp3pybcln8_azg8da.webp"
+    },
+    {
+      "id": 6,
+      "name": "Owen Lars",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1739281661/Owen-OP_aftfgw.webp"
+    },
+    {
+      "id": 7,
+      "name": "Beru Whitesun Lars",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1739281577/th_dbusfe.jpg"
+    },
+    {
+      "id": 8,
+      "name": "R5-D4",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1739281575/R5d4_scmqqx.webp"
+    },
+    {
+      "id": 9,
+      "name": "Biggs Darklighter",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1739281573/Swk_biggs_koprp3.webp"
+    },
+    {
+      "id": 10,
+      "name": "Obi-Wan Kenobi",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1739280281/obi-wan-kenobi-famed-jedi-1rjjflruvhn99v14_qswox4.webp"
+    }
+  ],
+  "planets": [
+    {
+      "id": 1,
+      "name": "Tatooine",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282198/Tatooine_TPM_z5i4jj.webp"
+    },
+    {
+      "id": 2,
+      "name": "Alderaan",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282227/Alderaan_xyrgkc.webp"
+    },
+    {
+      "id": 3,
+      "name": "Yavin IV",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282262/Yavin-4-SWCT_j4zk5k.webp"
+    },
+    {
+      "id": 4,
+      "name": "Hoth",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282362/Hoth_SWCT_trft78.webp"
+    },
+    {
+      "id": 5,
+      "name": "Dagobah",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282370/Dagobah-CGSWG_nadhz9.webp"
+    },
+    {
+      "id": 6,
+      "name": "Bespin",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282376/Bespin-SWCT_arha2g.webp"
+    },
+    {
+      "id": 7,
+      "name": "Endor",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282488/Endor_BF2_ysexjl.webp"
+    },
+    {
+      "id": 8,
+      "name": "Naboo",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282508/Naboo_planet_ecxtdb.webp"
+    },
+    {
+      "id": 9,
+      "name": "Coruscant",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282512/CoruscantGlobeE1_ndhv3q.webp"
+    },
+    {
+      "id": 10,
+      "name": "Kamino",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282483/Kamino-DB_vej0bw.webp"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "4",
+      "name": "Sand Crawler",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739284549/Sandcrawler-TMCh9_xs57uw.webp"
+    },
+    {
+      "id": "7",
+      "name": "X-34 landspeeder",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283665/X-34_landspeeder_EtU_pxsa6z.webp"
+    },
+    {
+      "id": "6",
+      "name": "T-16 skyhopper",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283669/T-16_skyhopper_-_SW_20_bzvhbh.webp"
+    },
+    {
+      "id": "8",
+      "name": "TIE/LN starfighter",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283675/7dceaf32b1d50effb58a48a11c20bf30e3988dc3r1-1080-1080v2_00_jfzf6o.jpg"
+    },
+    {
+      "id": "14",
+      "name": "Snowspeeder",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283678/T-47_Speeder_DICE_im5pnj.webp"
+    },
+    {
+      "id": "18",
+      "name": "AT-AT",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283685/ATAT-CHRON_lx4kae.webp"
+    },
+    {
+      "id": "16",
+      "name": "TIE bomber",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283672/TIE_Bomber_BF2_pogxry.webp"
+    },
+    {
+      "id": "19",
+      "name": "AT-ST",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283681/ATST-SWBdice_im4bnc.webp"
+    },
+    {
+      "id": "20",
+      "name": "Storm IV Twin-Pod cloud car",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283661/Storm_IV_Cloud_Car_EotECR_g19f1h.webp"
+    },
+    {
+      "id": "24",
+      "name": "Sail barge",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283649/Sailbarge_negvv_mfpaiv.webp"
+    }
+  ]
+}

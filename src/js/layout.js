@@ -13,6 +13,7 @@ import { Footer } from "./component/footer";
 import { CharacterDetail } from "./component/characterDetail";
 import { vehicleDetail } from "./component/vehicleDetail";
 import { planetDetail } from "./component/planetDetail";
+import { Logo } from "./component/logo";
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -23,10 +24,13 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
+					<Logo/>
 					<Navbar />
 					<Routes>
-						<Route path="/" element={<Home />} />
+						<Route path="/" element={<Home/>}/>
 						<Route path="/characters" element={<Characters />} />
+						<Route path="/planets" element={<Planets/>}/>
+						<Route path="/vehicles" element={<Vehicles/>}/>
 						<Route path="/characters/:id" element={<CharacterDetail />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>

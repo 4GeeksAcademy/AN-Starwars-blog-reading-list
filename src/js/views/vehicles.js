@@ -1,10 +1,25 @@
-import React from 'react';
-
+import React, { useEffect, useContext } from 'react';
+import { Context } from '../store/appContext';
+import { Card } from '../component/card';
 
 export const Vehicles = () => {
+  const { store, actions } = useContext(Context);
+
+  useEffect(() => {
+    actions.setLoading(true);
+    actions.getInitialVehicles();
+  }, []);
   return (
-    <div>
-      <h2>Characters Page</h2>
+    <div className="container d-flex flex-wrap justify-content-center">
+      {store.vehicles.map((vehicle, index) => (
+        <Card
+          key={index}
+          name={vehicle.name}
+          uid={vehicle.uid}
+          detailsUrl={vehicle.url}
+          category="vehicles"
+        />
+      ))}
     </div>
   );
 };
