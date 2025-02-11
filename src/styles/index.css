@@ -309,4 +309,49 @@
   .star-wars-scroll {
     font-size: 1.5rem;
   }
+  .nfd{
+    color: #ffd277;
+  }
+
+
+  .light-saber-bar {
+    position: relative;
+    width: 100%; 
+    height: 20px;
+    background-color: #333; 
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    overflow: hidden; 
+  }
+  
+  .saber-blade {
+    position: absolute;
+    top: 0;
+    right: 50%; 
+    width: 0%; 
+    height: 20px; 
+    background: linear-gradient(to right, rgb(179, 21, 21) 50%, rgb(26, 55, 214) 50%); 
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 25px rgba(0, 0, 255, 1); 
+    opacity: 0; 
+    transition: width 1s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out; 
+  }
+  
+  .saber-hilt {
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    width: 50%; 
+    height: 20px; 
+    background-color: #000; 
+    border-radius: 5px; 
+    z-index: 1; 
+  }
+  
+  .light-saber-bar:hover .saber-blade {
+    opacity: 1; 
+    width: 50%; 
+    box-shadow: 0 0 25px rgba(255, 0, 0, 1), 0 0 25px rgba(0, 0, 255, 1); 
+  }
   

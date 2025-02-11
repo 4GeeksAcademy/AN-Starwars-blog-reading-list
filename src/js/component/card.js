@@ -11,11 +11,11 @@ export const Card = ({ name, uid, category, detailsUrl, onToggleFavorite }) => {
     const getImageByCategoryAndId = (category, uid) => {
         const categoryData = data[category]; // 'characters', 'planets', or 'vehicles'
         if (!categoryData) {
-            return 'https://static.wikia.nocookie.net/starwars/images/4/4e/Darth_Vader_SWSB.png/revision/latest/scale-to-width-down/350?cb=20190226195745'; 
+            return 'https://static.wikia.nocookie.net/starwars/images/4/4e/Darth_Vader_SWSB.png/revision/latest/scale-to-width-down/350?cb=20190226195745';
         }
-        const item = categoryData.find(item => String(item.id) === String(uid)); 
+        const item = categoryData.find(item => String(item.id) === String(uid));
         if (!item) {
-            return 'https://static.wikia.nocookie.net/starwars/images/4/4e/Darth_Vader_SWSB.png/revision/latest/scale-to-width-down/350?cb=20190226195745'; 
+            return 'https://static.wikia.nocookie.net/starwars/images/4/4e/Darth_Vader_SWSB.png/revision/latest/scale-to-width-down/350?cb=20190226195745';
         }
         return item.image;
     };
@@ -63,10 +63,19 @@ export const Card = ({ name, uid, category, detailsUrl, onToggleFavorite }) => {
     const imageUrl = getImageByCategoryAndId(category, uid);
 
     return (
-        <div className="card m-3 text-center" style={{ width: "12rem" }}>
-            
-            <div className="card-body">
-                <h6 className="card-title">{name}</h6>
+        <div className="card m-3 text-center" style={{ width: "12rem", border: "1px solid", borderRadius: "10px", backgroundColor: "#222" }}>
+            <div className="card-img-container" style={{ height: "180px", overflow: "hidden", borderRadius: "10px 10px 0 0", borderBottom: "4px solid #e5e5e5" }}>
+                <img
+                    src={imageUrl}
+                    className="card-img-top w-100 h-100 cardimg object-fit-cover"
+                    alt={`${name}`}
+                    onError={(e) => e.target.src = `https://static.wikia.nocookie.net/starwars/images/4/4e/Darth_Vader_SWSB.png/revision/latest/scale-to-width-down/350?cb=20190226195745`}  // Fallback en caso de error
+                    onClick={handleDetails}
+                />
+            </div>
+            <div className="card-body" style={{ padding: "1rem", color: "#fff" }}>
+                <h6 className="card-title" style={{ fontSize: "1.1rem", fontWeight: "600", color: "#e5e5e5", textTransform: "uppercase" }}>
+                    {name}</h6>
                 <div className="d-flex flex-column justify-content-center">
                     <button className="Btn text-center" onClick={handleDetails}>
                     </button>
