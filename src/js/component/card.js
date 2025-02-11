@@ -26,7 +26,7 @@ export const Card = ({ name, uid, category, detailsUrl, onToggleFavorite }) => {
             (favorite) => favorite.uid === uid && favorite.category === category
         );
         setIsFavorite(isAlreadyFavorite);
-    }, [uid, category]);
+    }, []);
 
     // AÑADIR FAVORITO
     const toggleFavorite = () => {
@@ -64,13 +64,7 @@ export const Card = ({ name, uid, category, detailsUrl, onToggleFavorite }) => {
 
     return (
         <div className="card m-3 text-center" style={{ width: "12rem" }}>
-            <img
-                src={imageUrl}
-                className="card-img-top cardimg"
-                alt={`${name}`}
-                onError={(e) => e.target.src = `https://static.wikia.nocookie.net/starwars/images/4/4e/Darth_Vader_SWSB.png/revision/latest/scale-to-width-down/350?cb=20190226195745`}  // Fallback en caso de error
-                onClick={handleDetails}
-            />
+            
             <div className="card-body">
                 <h6 className="card-title">{name}</h6>
                 <div className="d-flex flex-column justify-content-center">

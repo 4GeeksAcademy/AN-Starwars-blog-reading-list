@@ -14,7 +14,7 @@ export const CharacterDetail = () => {
 
         // Cuando los datos se han cargado, actualizamos el estado de 'loading' a false
         setLoading(false); // Asegúrate de poner esto después de que los datos se obtienen
-    }, [id, actions]); // Dependemos de 'id' y 'actions' para que se ejecute cada vez que cambie el id
+    }, []); // Dependemos de 'id' y 'actions' para que se ejecute cada vez que cambie el id
 
     const character = store.character;
 
