@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; // Para obtener el ID del personaje
 import { Context } from "../store/appContext";
 import data from "../component/imgdata.json";
-import sable from "../../img/star-wars-sable.png"
+import sable from "../../img/star-wars-sable.png";
+import imgdefault from '../../img/vader.png';
 
 export const CharacterDetail = () => {
     const { store, actions } = useContext(Context);
@@ -11,9 +12,15 @@ export const CharacterDetail = () => {
     const [loading, setLoading] = useState(true); // Estado para mostrar la pantalla de carga
 
     useEffect(() => {
-        actions.getCharactersByid(uid);
-        setLoading(false);
-    }, []);
+        if (!store.character || store.character.uid !== uid) {
+            setLoading(true);
+            actions.getCharactersByid(uid) 
+                .then(() => setLoading(false))
+                .catch(() => setLoading(false)); 
+        } else {
+            setLoading(false);
+        }
+    }, []); 
 
     const { character } = store;
 
@@ -24,14 +31,14 @@ export const CharacterDetail = () => {
                     <span className="visually-hidden">Cargando...</span>
                 </div>
             </div>
-        ); // Muestra el spinner de carga mientras se obtienen los datos
+        ); 
     }
 
     if (!character) {
         return <p className="nfd">Personaje no encontrado.</p>; // Si no se encuentra el personaje
     }
-    const imageUrl = data.characters.find(item => item.id === parseInt(uid))?.image || "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExczNldmVtN2d6OGM4OXYzaW41NWtkdmI5c3Rlajg5dzJ0eGhkeWZkaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TxjEiu03FfZfN68rDD/giphy.gif";
-    
+    const imageUrl = data.characters.find(item => item.id === parseInt(uid))?.image || imgdefault;
+
     return (
         <div className="container">
             <h1 className="text-center text-uppercase mb-4">Character Detail</h1>
@@ -39,15 +46,18 @@ export const CharacterDetail = () => {
                 <div className="d-flex p-4">
                     {/*imagen en la izquierda */}
                     <div style={{ marginRight: "20px" }}>
-                        <img
-                            src={imageUrl}
-                            alt={character.name}
-                            style={{
-                                objectFit: "cover",
-                            }}
-                        />
+                    <img
+    src={imageUrl}
+    alt={character.name}
+    style={{
+        width: "800px",  
+        height: "600px", 
+        objectFit: "cover",  
+    }}
+    onError={(e) => e.target.src = imgdefault}
+/>
+
                     </div>
-                    {/*Nombre y lorem */}
                     <div style={{ color: "#e5e5e5", fontStyle: "italic" }}>
                         <h2 className="text-white text-center" style={{ textTransform: "uppercase" }}>
                             {character ? character.name : "Cargando..."}

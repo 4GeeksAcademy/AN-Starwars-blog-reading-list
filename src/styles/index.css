@@ -65,6 +65,30 @@
   }
   
 
+
+
+  .loader-overlay {
+    position: fixed;          /* Para que cubra toda la pantalla */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);  /* Fondo oscuro con algo de transparencia */
+    display: flex;            /* Para alinear elementos con flexbox */
+    justify-content: center;  /* Centrar horizontalmente */
+    align-items: center;      /* Centrar verticalmente */
+    z-index: 9999;            /* Asegura que se muestre encima de todo lo demás */
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.3em;
+    border-top-color: #3498db;  /* Puedes cambiar el color del borde superior */
+}
+
+
+
   
   /*LOADER*/
   .lds-ellipsis {
@@ -294,3 +318,81 @@ font-weight: bold;
   }
 }
 
+
+
+.home-container {
+  color: white;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.welcome-message h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-out;
+}
+
+.star-wars-text {
+  text-align: center;
+  color: white;
+  animation: moveText 40s linear infinite; 
+}
+
+.star-wars-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: txtAnimation 5s ease-out forwards;
+}
+
+.star-wars-subtitle {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 20px;
+  animation: txtAnimation 5s ease-out forwards;
+}
+
+.star-wars-scroll {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 20px;
+  animation:txtAnimation 40s linear infinite; 
+  text-align: center; 
+
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveText {
+  0% {
+    transform: perspective(500px) rotateX(30deg) translateY(100vh); 
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(500px) rotateX(30deg) translateY(-80vh); 
+    opacity: 0;
+  }
+}
+
+@keyframes txtAnimation {
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
