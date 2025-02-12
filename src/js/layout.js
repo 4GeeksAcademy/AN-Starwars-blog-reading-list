@@ -11,8 +11,8 @@ import { Favorites } from "./views/favorites";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { CharacterDetail } from "./component/characterDetail";
-import { vehicleDetail } from "./component/vehicleDetail";
-import { planetDetail } from "./component/planetDetail";
+import { VehicleDetail } from "./component/vehicleDetail";
+import { PlanetDetail } from "./component/planetDetail";
 import { Logo } from "./component/logo";
 //create your first component
 const Layout = () => {
@@ -32,7 +32,9 @@ const Layout = () => {
 						<Route path="/planets" element={<Planets />} />
 						<Route path="/vehicles" element={<Vehicles />} />
 						<Route path="/favorites" element={<Favorites />} />
-						<Route path="/characters/:id" element={<CharacterDetail />} />
+						<Route path="/characters/:uid" element={<CharacterDetail />} />
+						<Route path="/vehicles/:uid" element={<VehicleDetail />} />
+						<Route path="/planets/:uid" element={<PlanetDetail />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />

@@ -1,9 +1,9 @@
 import React from "react";
 
-export const planetDetail = () =>{
-    return(
+export const PlanetDetail = () => {
+    return (
         <>
-        <h2>detalle de Personaje</h2>
+            <h2>detalle de Personaje</h2>
         </>
     )
 }
