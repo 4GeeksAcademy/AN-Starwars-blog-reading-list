@@ -241,6 +241,35 @@
 
 
 
+
+.vehicle-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.vehicle-info {
+display: flex;
+flex-wrap: wrap;
+justify-content: flex-start;
+font-size: 18px;
+line-height: 1.6;
+}
+.vehicle-info p {
+margin-right: 20px;
+color:#ffd277; 
+font-weight: bold; 
+}
+.vehicle-info p strong {
+  color: #ffd277; 
+}
+
+.vehicle-info p .vehicle-data {
+  color: #ffd277; 
+  font-weight: normal; 
+}
+
   /* sable laser CSS */
   .lightsaber-img {
     width: 100%;

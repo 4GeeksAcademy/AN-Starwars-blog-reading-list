@@ -30,7 +30,8 @@ export const CharacterDetail = () => {
     if (!character) {
         return <p className="nfd">Personaje no encontrado.</p>; // Si no se encuentra el personaje
     }
-    const imageUrl = data.characters.find(item => item.id === parseInt(uid))?.image || "https://static.wikia.nocookie.net/starwars/images/4/4e/Darth_Vader_SWSB.png/revision/latest/scale-to-width-down/350?cb=20190226195745";
+    const imageUrl = data.characters.find(item => item.id === parseInt(uid))?.image || "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExczNldmVtN2d6OGM4OXYzaW41NWtkdmI5c3Rlajg5dzJ0eGhkeWZkaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TxjEiu03FfZfN68rDD/giphy.gif";
+    
     return (
         <div className="container">
             <h1 className="text-center text-uppercase mb-4">Character Detail</h1>

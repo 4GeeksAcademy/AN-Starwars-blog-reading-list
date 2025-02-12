@@ -52,7 +52,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getInitialVehicles: async () => {
 				const store = getStore();
-				if (store.vehicle.length > 0) {
+				if (store.vehicles.length > 0) {
 					return;
 				}
 				try {
@@ -75,7 +75,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const response = await fetch(`https://www.swapi.tech/api/vehicles/${id}`);
 					if (!response.ok) throw Error(`Vehiculo no encontrado`);
 					const data = await response.json();
-					setStore({ Vehicle: data.result.properties });
+					setStore({ vehicle: data.result.properties });
 				}
 				catch (error) {
 					console.error(error);
@@ -102,16 +102,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			getPlanetsByid: async (id) => {
-				const store = getStore();
-				if (store.planet && store.planet.id === id) {
-					return;
-				}
+				const actions = getActions();
+				actions.setLoading(true)
 				try {
 					setStore({ loading: true });
 					const response = await fetch(`https://www.swapi.tech/api/planets/${id}`);
 					if (!response.ok) throw Error(`Personaje no encontrado`);
 					const data = await response.json();
-					setStore({ planet: data.results.properties });
+					setStore({ planet: data.result.properties });
 				}
 				catch (error) {
 					console.error(error);

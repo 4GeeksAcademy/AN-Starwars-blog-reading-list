@@ -1,28 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; // Para obtener el ID del vehículo
+import { useParams } from "react-router-dom"; 
 import { Context } from "../store/appContext";
 import data from "../component/imgdata.json";
-import sable from "../../img/star-wars-sable.png"; // Imagen para mostrar en detalles
+import sable from "../../img/star-wars-sable.png"; 
 
 export const VehicleDetail = () => {
     const { store, actions } = useContext(Context);
-    const { uid } = useParams(); // Obtenemos el ID del vehículo desde la URL
+    const { uid } = useParams(); 
 
-    const [loading, setLoading] = useState(true); // Estado de carga
+    const [loading, setLoading] = useState(true); 
 
     useEffect(() => {
         // Llamar a la acción para obtener los detalles del vehículo por ID
         actions.getVehiclesByid(uid);
-
-        // Verificamos si la acción es correcta
-        console.log("Llamada a la acción para obtener el vehículo con ID:", uid);
         setLoading(false);
     }, []);
 
     const { vehicle } = store;
-
-    console.log("Datos del vehículo desde el store:", vehicle);
-
     if (loading) {
         return (
             <div className="loader-overlay">
@@ -34,12 +28,11 @@ export const VehicleDetail = () => {
     }
 
     if (!vehicle) {
-        console.log("No se encontró el vehículo con ID:", id);
         return <p className="nfd">Vehículo no encontrado.</p>; // Si no se encuentra el vehículo
     }
 
     // Buscamos la imagen del vehículo según el ID
-    const imageUrl = data.vehicles.find(item => item.id === parseInt(uid))?.image || "https://via.placeholder.com/350"; // Imagen por defecto
+    const imageUrl = data.vehicles.find(item => item.id === uid)?.image || "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExczNldmVtN2d6OGM4OXYzaW41NWtkdmI5c3Rlajg5dzJ0eGhkeWZkaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TxjEiu03FfZfN68rDD/giphy.gif";
 
     return (
         <div className="container">
@@ -64,7 +57,7 @@ export const VehicleDetail = () => {
                             {vehicle ? vehicle.name : "Cargando..."}
                         </h2>
                         <p>
-                            {vehicle.description || "No description available."}
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.
                         </p>
                     </div>
                 </div>
