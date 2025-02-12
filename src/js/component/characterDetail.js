@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; // Para obtener el ID del personaje
 import { Context } from "../store/appContext";
 import data from "../component/imgdata.json";
+import sable from "../../img/star-wars-sable.png"
 export const CharacterDetail = () => {
     const { store, actions } = useContext(Context);
     const { id } = useParams();
@@ -56,25 +57,25 @@ export const CharacterDetail = () => {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.
                         </p>
                     </div>
-                </div>
-                <div className="card-footer" style={{ backgroundColor: "#333", color: "#fff", padding: "1rem" }}>
-                    <div class="light-saber-bar" style={{ marginBottom: "15px"}}>
-                        <div class="saber-blade"></div>
-                        <div class="saber-hilt"></div>
-                    </div>
 
-                    <h5>Additional Info:</h5>
-                    {/* Aquí tenemos una fila horizontal */}
-                    <div className="d-flex flex-wrap" style={{ marginBottom: "15px" }}>
-                        <div style={{ marginRight: "20px" }}><strong>Gender:</strong> {character.gender}</div>
-                        <div style={{ marginRight: "20px" }}><strong>Skin Color:</strong> {character.skin_color}</div>
-                        <div style={{ marginRight: "20px" }}><strong>Eye Color:</strong> {character.eye_color}</div>
+                </div>
+
+                <div className="card-footer" style={{ backgroundColor: "#333", color: "#fff", padding: "1rem" }}>
+                    <div className="lightsaber-container">
+                        <img
+                            src={sable}
+                            alt="Lightsaber"
+                            className="lightsaber-img"
+                        />
                     </div>
-                    {/* Información adicional debajo, en vertical */}
-                    <div className="d-flex flex-column">
-                        <div style={{ marginBottom: "10px" }}><strong>Birth Year:</strong> {character.birth_year}</div>
-                        <div style={{ marginBottom: "10px" }}><strong>Height:</strong> {character.height} cm</div>
-                        <div><strong>Mass:</strong> {character.mass} kg</div>
+                    <h5 className="info">Additional Info:</h5>
+                    <div className="character-info">
+                        <p><strong>Gender:</strong> <span className="character-data">{character.gender}</span></p>
+                        <p><strong>Skin Color:</strong> <span className="character-data">{character.skin_color}</span></p>
+                        <p><strong>Eye Color:</strong> <span className="character-data">{character.eye_color}</span></p>
+                        <p><strong>Birth Year:</strong> <span className="character-data">{character.birth_year}</span></p>
+                        <p><strong>Height:</strong> <span className="character-data">{character.height} cm</span></p>
+                        <p><strong>Mass:</strong> <span className="character-data">{character.mass} kg</span></p>
                     </div>
                 </div>
             </div>
