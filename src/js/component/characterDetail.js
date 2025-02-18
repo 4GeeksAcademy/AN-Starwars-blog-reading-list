@@ -8,22 +8,19 @@ import imgdefault from '../../img/vader.png';
 export const CharacterDetail = () => {
     const { store, actions } = useContext(Context);
     const { uid } = useParams();
-
     const [loading, setLoading] = useState(true); // Estado para mostrar la pantalla de carga
 
     useEffect(() => {
         if (!store.character || store.character.uid !== uid) {
             setLoading(true);
-            actions.getCharactersByid(uid) 
+            actions.getCharactersByid(uid)
                 .then(() => setLoading(false))
-                .catch(() => setLoading(false)); 
+                .catch(() => setLoading(false));
         } else {
             setLoading(false);
         }
-    }, []); 
-
+    }, []);
     const { character } = store;
-
     if (loading) {
         return (
             <div className="loader-overlay">
@@ -31,7 +28,7 @@ export const CharacterDetail = () => {
                     <span className="visually-hidden">Cargando...</span>
                 </div>
             </div>
-        ); 
+        );
     }
 
     if (!character) {
@@ -41,21 +38,16 @@ export const CharacterDetail = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center text-uppercase mb-4">Character Detail</h1>
             <div className="card mb-5" style={{ backgroundColor: "#222", border: "1px solid #e5e5e5" }}>
                 <div className="d-flex p-4">
                     {/*imagen en la izquierda */}
                     <div style={{ marginRight: "20px" }}>
-                    <img
-    src={imageUrl}
-    alt={character.name}
-    style={{
-        width: "800px",  
-        height: "600px", 
-        objectFit: "cover",  
-    }}
-    onError={(e) => e.target.src = imgdefault}
-/>
+                        <img
+                            src={imageUrl}
+                            alt={character.name}
+                            className="img_char"
+                            onError={(e) => e.target.src = imgdefault}
+                        />
 
                     </div>
                     <div style={{ color: "#e5e5e5", fontStyle: "italic" }}>

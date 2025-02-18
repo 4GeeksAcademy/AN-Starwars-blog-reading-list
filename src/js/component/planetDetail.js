@@ -11,8 +11,14 @@ export const PlanetDetail = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        actions.getPlanetsByid(uid);
-        setLoading(false);
+        if (!store.planet || store.planet.uid !== uid) {
+            setLoading(true);
+            actions.getPlanetsByid(uid)
+                .then(() => setLoading(false))
+                .catch(() => setLoading(false));
+        } else {
+            setLoading(false);
+        }
     }, []);
 
     const { planet } = store;
@@ -35,7 +41,6 @@ export const PlanetDetail = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center text-uppercase mb-4">Vehicle Detail</h1>
             <div className="card mb-5" style={{ backgroundColor: "#222", border: "1px solid #e5e5e5" }}>
                 <div className="d-flex p-4">
                     {/* Imagen en la izquierda */}
@@ -44,9 +49,9 @@ export const PlanetDetail = () => {
                             src={imageUrl}
                             alt={planet.name}
                             style={{
-                                objectFit: "cover",
-                                maxWidth: "300px",
-                                maxHeight: "200px"
+                                objectFit: "contain",
+                                width: "500px",
+                                height: "500px",
                             }}
                         />
                     </div>

@@ -1,19 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; 
+import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import data from "../component/imgdata.json";
-import sable from "../../img/star-wars-sable.png"; 
+import sable from "../../img/star-wars-sable.png";
 
 export const VehicleDetail = () => {
     const { store, actions } = useContext(Context);
-    const { uid } = useParams(); 
+    const { uid } = useParams();
 
-    const [loading, setLoading] = useState(true); 
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Llamar a la acción para obtener los detalles del vehículo por ID
-        actions.getVehiclesByid(uid);
-        setLoading(false);
+        if (!store.vehicle || store.vehicle.uid !== uid) {
+            setLoading(true);
+            actions.getVehiclesByid(uid)
+                .then(() => setLoading(false))
+                .catch(() => setLoading(false));
+        } else {
+            setLoading(false);
+        }
     }, []);
 
     const { vehicle } = store;
@@ -36,7 +41,6 @@ export const VehicleDetail = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center text-uppercase mb-4">Vehicle Detail</h1>
             <div className="card mb-5" style={{ backgroundColor: "#222", border: "1px solid #e5e5e5" }}>
                 <div className="d-flex p-4">
                     {/* Imagen en la izquierda */}
@@ -45,9 +49,9 @@ export const VehicleDetail = () => {
                             src={imageUrl}
                             alt={vehicle.name}
                             style={{
-                                objectFit: "cover",
-                                maxWidth: "300px",
-                                maxHeight: "200px"
+                                objectFit: "contain",
+                                width: "500px",
+                                height: "500px",
                             }}
                         />
                     </div>
