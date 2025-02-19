@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 import data from "../component/imgdata.json";
 import sable from "../../img/star-wars-sable.png";
 import imgdefault from '../../img/vader.png';
+import "../../styles/detail.css"
 
 export const CharacterDetail = () => {
     const { store, actions } = useContext(Context);
@@ -38,30 +39,27 @@ export const CharacterDetail = () => {
 
     return (
         <div className="container">
-            <div className="card mb-5" style={{ backgroundColor: "#222", border: "1px solid #e5e5e5" }}>
+            <div className="card mb-5 detail">
                 <div className="d-flex p-4">
                     {/*imagen en la izquierda */}
-                    <div style={{ marginRight: "20px" }}>
+                    <div className="image-container">
                         <img
                             src={imageUrl}
                             alt={character.name}
                             className="img_char"
                             onError={(e) => e.target.src = imgdefault}
                         />
-
                     </div>
-                    <div style={{ color: "#e5e5e5", fontStyle: "italic" }}>
-                        <h2 className="text-white text-center" style={{ textTransform: "uppercase" }}>
+                    <div>
+                        <h2 className="text-white text-center">
                             {character ? character.name : "Cargando..."}
                         </h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.
                         </p>
                     </div>
-
                 </div>
-
-                <div className="card-footer" style={{ backgroundColor: "#333", color: "#fff", padding: "1rem" }}>
+                <div className="card-footer">
                     <div className="lightsaber-container">
                         <img
                             src={sable}
