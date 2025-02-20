@@ -1,11 +1,31 @@
 import React from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
+
 
 export const Navbar = () => {
-	return (
-		<div className="d-flex justify-content-center">
-			<nav className="navbar navbar-expand ">
+	const navigate = useNavigate();
+	const location = useLocation();
 
+	const handleLogoClick = () => {
+		if (location.pathname !== "/") {
+			navigate("/");
+		} else {
+			window.location.reload();
+		}
+	};
+
+	return (
+		<div className="d-flex NAV flex-column align-items-center">
+			<div className='d-flex justify-content-center mt-4'>
+				<Link to="/" onClick={handleLogoClick}>
+					<img
+						className="navbar-logo animate__animated animate__zoomIn"
+						src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png?region=0,0,586,254"
+						alt="logo"
+					/>
+				</Link>
+			</div>
+			<nav className="navbar navbar-expand ">
 				<button className="navbar-toggler text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
@@ -48,6 +68,8 @@ export const Navbar = () => {
 					</ul>
 				</div>
 			</nav>
+			<hr className="navbar-divider" />
+
 		</div>
 	);
 };

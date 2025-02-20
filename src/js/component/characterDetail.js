@@ -26,7 +26,6 @@ export const CharacterDetail = () => {
         return (
             <div className="loader-overlay">
                 <div className="spinner-border" role="status">
-                    <span className="visually-hidden">Cargando...</span>
                 </div>
             </div>
         );

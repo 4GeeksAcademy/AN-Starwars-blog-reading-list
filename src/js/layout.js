@@ -13,7 +13,6 @@ import { Footer } from "./component/footer";
 import { CharacterDetail } from "./component/characterDetail";
 import { VehicleDetail } from "./component/vehicleDetail";
 import { PlanetDetail } from "./component/planetDetail";
-import { Logo } from "./component/logo";
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -21,10 +20,9 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div>
+		<div className="app-container">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Logo />
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
