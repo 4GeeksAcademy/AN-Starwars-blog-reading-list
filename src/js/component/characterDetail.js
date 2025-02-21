@@ -2,9 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; // Para obtener el ID del personaje
 import { Context } from "../store/appContext";
 import data from "../component/imgdata.json";
-import sable from "../../img/star-wars-sable.png";
 import imgdefault from '../../img/vader.png';
-import "../../styles/detail.css"
+
 
 export const CharacterDetail = () => {
     const { store, actions } = useContext(Context);
@@ -28,9 +27,8 @@ export const CharacterDetail = () => {
                 <div className="spinner-border" role="status">
                 </div>
             </div>
-        );
+        ); // Muestra el spinner de carga mientras se obtienen los datos
     }
-
     if (!character) {
         return <p className="nfd">Personaje no encontrado.</p>; // Si no se encuentra el personaje
     }
@@ -38,19 +36,22 @@ export const CharacterDetail = () => {
 
     return (
         <div className="container">
-            <div className="card mb-5 detail">
-                <div className="d-flex p-4">
-                    {/*imagen en la izquierda */}
-                    <div className="image-container">
+            <div className="card container mb-5">
+                <div className="d-flex flex-column flex-md-row p-4">
+                    {/* Contenedor de la imagen */}
+                    <div className="image-container mb-3 mb-md-0 d-flex justify-content-center">
                         <img
                             src={imageUrl}
                             alt={character.name}
-                            className="img_char"
+                            className="img-fluid img_char"
+                            style={{ objectFit: 'cover', maxWidth: '540px' }}
                             onError={(e) => e.target.src = imgdefault}
                         />
                     </div>
-                    <div>
-                        <h2 className="text-white text-center">
+
+                    {/* Contenedor de la descripción */}
+                    <div className="description-container ms-md-4 mt-3 mt-md-0">
+                        <h2 className="text-white char text-center">
                             {character ? character.name : "Cargando..."}
                         </h2>
                         <p>
@@ -58,25 +59,40 @@ export const CharacterDetail = () => {
                         </p>
                     </div>
                 </div>
+
+                {/* Contenedor de los detalles adicionales */}
                 <div className="card-footer">
-                    <div className="lightsaber-container">
-                        <img
-                            src={sable}
-                            alt="Lightsaber"
-                            className="lightsaber-img"
-                        />
-                    </div>
-                    <h5 className="info">Additional Info:</h5>
-                    <div className="character-info">
-                        <p><strong>Gender:</strong> <span className="character-data">{character.gender}</span></p>
-                        <p><strong>Skin Color:</strong> <span className="character-data">{character.skin_color}</span></p>
-                        <p><strong>Eye Color:</strong> <span className="character-data">{character.eye_color}</span></p>
-                        <p><strong>Birth Year:</strong> <span className="character-data">{character.birth_year}</span></p>
-                        <p><strong>Height:</strong> <span className="character-data">{character.height} cm</span></p>
-                        <p><strong>Mass:</strong> <span className="character-data">{character.mass} kg</span></p>
+                    <h5 className="info">Additional Info</h5>
+                    <div className="d-flex flex-column flex-md-row justify-content-between">
+                        <div className="text-center border-end pe-3 mb-3 mb-md-0">
+                            <p><strong>Gender</strong></p>
+                            <p>{character.gender}</p>
+                        </div>
+                        <div className="text-center border-end pe-3 mb-3 mb-md-0">
+                            <p><strong>Skin Color</strong></p>
+                            <p>{character.skin_color}</p>
+                        </div>
+                        <div className="text-center border-end pe-3 mb-3 mb-md-0">
+                            <p><strong>Eye Color</strong></p>
+                            <p>{character.eye_color}</p>
+                        </div>
+                        <div className="text-center border-end pe-3 mb-3 mb-md-0">
+                            <p><strong>Birth Year</strong></p>
+                            <p>{character.birth_year}</p>
+                        </div>
+                        <div className="text-center border-end pe-3 mb-3 mb-md-0">
+                            <p><strong>Height</strong></p>
+                            <p>{character.height} cm</p>
+                        </div>
+                        <div className="text-center pe-3 mb-3 mb-md-0">
+                            <p><strong>Mass</strong></p>
+                            <p>{character.mass} kg</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
     );
 };

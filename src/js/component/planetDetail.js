@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import data from "../component/imgdata.json";
-import sable from "../../img/star-wars-sable.png";
+import imgdefault from '../../img/vader.png';
 
 export const PlanetDetail = () => {
     const { store, actions } = useContext(Context);
@@ -37,27 +37,25 @@ export const PlanetDetail = () => {
     }
 
     // Buscamos la imagen del vehículo según el ID
-    const imageUrl = data.planets.find(item => item.id === parseInt(uid))?.image || "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExczNldmVtN2d6OGM4OXYzaW41NWtkdmI5c3Rlajg5dzJ0eGhkeWZkaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TxjEiu03FfZfN68rDD/giphy.gif";
+    const imageUrl = data.planets.find(item => item.id === parseInt(uid))?.image || imgdefault;
 
     return (
         <div className="container">
-            <div className="card mb-5" style={{ backgroundColor: "#222", border: "1px solid #e5e5e5" }}>
-                <div className="d-flex p-4">
+            <div className="card container mb-5">
+                <div className="d-flex flex-column flex-md-row p-4">
                     {/* Imagen en la izquierda */}
-                    <div style={{ marginRight: "20px" }}>
+                    <div className="image-container mb-3 mb-md-0 d-flex justify-content-center">
                         <img
                             src={imageUrl}
                             alt={planet.name}
-                            style={{
-                                objectFit: "contain",
-                                width: "500px",
-                                height: "500px",
-                            }}
+                            className="img-fluid img_char"
+                            style={{ objectFit: 'cover', maxWidth: '540px'}}
+                            onError={(e) => e.target.src = imgdefault}
                         />
                     </div>
                     {/* Nombre y descripción */}
-                    <div style={{ color: "#e5e5e5", fontStyle: "italic" }}>
-                        <h2 className="text-white text-center" style={{ textTransform: "uppercase" }}>
+                    <div className="description-container ms-md-4 mt-3 mt-md-0">
+                        <h2 className="text-white char text-center">
                             {planet ? planet.name : "Cargando..."}
                         </h2>
                         <p>
@@ -66,24 +64,41 @@ export const PlanetDetail = () => {
                     </div>
                 </div>
 
-                <div className="card-footer" style={{ backgroundColor: "#333", color: "#fff", padding: "1rem" }}>
-                    <div className="lightsaber-container">
-                        <img
-                            src={sable}
-                            alt="Lightsaber"
-                            className="lightsaber-img"
-                        />
-                    </div>
-                    <h5 className="info">Additional Info:</h5>
-                    <div className="vehicle-info">
-                        <p><strong>Name:</strong> <span className="vehicle-data">{planet.name}</span></p>
-                        <p><strong>Diameter:</strong> <span className="vehicle-data">{planet.diameter}</span></p>
-                        <p><strong>Orbital period:</strong> <span className="vehicle-data">{planet.orbital_period}</span></p>
-                        <p><strong>Rotation period:</strong> <span className="vehicle-data">{planet.rotation_period}</span></p>
-                        <p><strong>Gravity:</strong> <span className="vehicle-data">{planet.gravity}</span></p>
-                        <p><strong>Climate:</strong> <span className="vehicle-data">{planet.climate}</span></p>
-                        <p><strong>Terrain:</strong> <span className="vehicle-data">{planet.terrain}</span></p>
-                        <p><strong>Surface water: <span className="vehicle-data">{planet.surface_water}</span></strong></p>
+                <div className="card-footer">
+                    <h5 className="info">Additional Info</h5>
+                    <div className="d-flex flex-column flex-md-row justify-content-between">
+                        <div className="text-center border-end pe-3 mb-3 mb-md-0">
+                            <p><strong>Name</strong></p>
+                            <p>{planet.name}</p>
+                        </div>
+                        <div className="text-center border-end pe-3 mb-3 mb-md-0">
+                            <p><strong>Diameter</strong></p>
+                            <p>{planet.diameter}</p>
+                        </div>
+                        <div className="text-center border-end pe-3 mb-3 mb-md-0">
+                            <p><strong>Orbital Period</strong></p>
+                            <p>{planet.orbital_period}</p>
+                        </div>
+                        <div className="text-center border-end pe-3 mb-3 mb-md-0">
+                            <p><strong>Rotation Period</strong></p>
+                            <p>{planet.rotation_period}</p>
+                        </div>
+                        <div className="text-center border-end pe-3 mb-3 mb-md-0">
+                            <p><strong>Gravity</strong></p>
+                            <p>{planet.gravity}</p>
+                        </div>
+                        <div className="text-center border-end pe-3 mb-3 mb-md-0">
+                            <p><strong>Climate</strong></p>
+                            <p>{planet.climate}</p>
+                        </div>
+                        <div className="text-center border-end pe-3 mb-3 mb-md-0">
+                            <p><strong>Terrain</strong></p>
+                            <p>{planet.terrain}</p>
+                        </div>
+                        <div className="text-center pe-3 mb-3 mb-md-0">
+                            <p><strong>Surface Water</strong></p>
+                            <p>{planet.surface_water}</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -50,12 +50,17 @@ footer {
 .navbar-logo {
   width: 400px;
   height: auto;
-  filter: drop-shadow(0px 0px 25px #ffffffc9);
+  filter: drop-shadow(0px 0px 25px #ecea6ac9);
   transition: filter 0.3s ease, 0.3s ease;
 }
 
 .navbar-logo:hover {
-  filter: drop-shadow(0px 0px 35px #ffffff);
+  filter: drop-shadow(0px 0px 35px #00a2ff);
+}
+
+
+.char:hover{
+  filter: drop-shadow(0px 0px 5px #e9ebeb);
 }
 
 .navlink {
@@ -107,12 +112,9 @@ footer {
   width: 3rem;
   height: 3rem;
   border-width: 0.3em;
-  border-top-color: #2cc8e4;
+  border-top-color: #ff0303;
   /* Puedes cambiar el color del borde superior */
 }
-
-
-/**************************************************/
 
 /*LOADER*/
 .lds-ellipsis {
@@ -181,6 +183,8 @@ footer {
     transform: translate(24px, 0);
   }
 }
+
+
 
 /*BOTON CARD*/
 .Btn {
@@ -253,24 +257,18 @@ footer {
 
 
 
-/*card detail info*/
-.detail {
-  box-shadow: 10px 10px 10px red;
-  border: 2px solid #e5e5e5;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.container {
+  background-color: black;
+
 }
 
-.detail:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
-}
+
+/*card detail info*/
 
 .img_char {
   width: 540px;
-  height: 360px;
+  height: 460px;
   border-radius: 8px;
-
   .contain {
     object-fit: contain;
   }
@@ -287,40 +285,14 @@ footer {
   margin-right: 20px;
 }
 
-/* Detalles del personaje */
-.character-details {
-  color: #e5e5e5;
-  font-style: italic;
-}
-
-.character-details h2 {
-  text-transform: uppercase;
-  font-size: 2rem;
-  letter-spacing: 2px;
-}
 
 /* Fondo oscuro y detalles para el footer */
 .card-footer {
-  background-color: #333;
+  background-color: black;
   color: #fff;
   padding: 1.5rem;
   border-top: 1px solid #e5e5e5;
   border-radius: 0 0 8px 8px;
-}
-
-.container {
-  background-color: rgba(8, 3, 3, 0.925);
-}
-
-/* Contenedor del sable de luz */
-.lightsaber-container {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.lightsaber-img {
-  width: 40px;
-  height: 40px;
 }
 
 /* Sección de información adicional */
@@ -331,18 +303,6 @@ footer {
   letter-spacing: 1px;
 }
 
-/* Información del personaje */
-.character-info p {
-  margin-right: 20px;
-  font-size: 1.1rem;
-  margin: 5px 0;
-}
-
-.character-data {
-  font-weight: bold;
-  color: #ffcc00;
-  /* Color dorado, típico de Star Wars */
-}
 
 
 
@@ -351,69 +311,6 @@ footer {
 
 
 
-
-
-
-.vehicle-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.vehicle-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.vehicle-info p {
-  margin-right: 20px;
-  color: #ffd277;
-  font-weight: bold;
-}
-
-.vehicle-info p strong {
-  color: #ffd277;
-}
-
-.vehicle-info p .vehicle-data {
-  color: #ffd277;
-  font-weight: normal;
-}
-
-/* sable laser CSS */
-.lightsaber-img {
-  width: 100%;
-  height: 78px;
-  object-fit: cover;
-  transform: scaleX(-1);
-  animation: glowAnimation 1.5s infinite alternate;
-  /* Animación para la parte luminosa */
-  filter: brightness(1);
-  border-radius: 5px;
-}
-
-/* Crear la animación */
-@keyframes glowAnimation {
-  0% {
-    filter: brightness(1);
-    /* Brillo normal */
-  }
-
-  50% {
-    filter: brightness(2);
-    /* Aumenta el brillo */
-  }
-
-  100% {
-    filter: brightness(1);
-    /* Brillo normal */
-  }
-}
 
 
 

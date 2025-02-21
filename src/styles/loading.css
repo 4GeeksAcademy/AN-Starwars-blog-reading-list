@@ -1,0 +1,31 @@
+
+/*css loader cards*/
+.loader-overlay {
+  position: fixed;
+  /* Para que cubra toda la pantalla */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo oscuro con algo de transparencia */
+  display: flex;
+  /* Para alinear elementos con flexbox */
+  justify-content: center;
+  /* Centrar horizontalmente */
+  align-items: center;
+  /* Centrar verticalmente */
+  z-index: 9999;
+  /* Asegura que se muestre encima de todo lo demás */
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3em;
+  border-top-color: #ff0303;
+  /* Puedes cambiar el color del borde superior */
+}
+
+
+
