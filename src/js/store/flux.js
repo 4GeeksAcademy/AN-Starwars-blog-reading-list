@@ -45,7 +45,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ character: data.result.properties });
 				}
 				catch (error) {
-					console.error("fallo algo " + error);
+					setStore({ character: null, error: true})
 				} finally {
 					setStore({ loading: false });
 				}
@@ -78,7 +78,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ vehicle: data.result.properties });
 				}
 				catch (error) {
-					console.error(error);
+					setStore({ vehicle: null, error: true})
 				} finally {
 					setStore({ loading: false });
 				}
@@ -112,7 +112,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ planet: data.result.properties });
 				}
 				catch (error) {
-					console.error(error);
+					setStore({ planet: null, error: true})
 				} finally {
 					setStore({ loading: false });
 				}

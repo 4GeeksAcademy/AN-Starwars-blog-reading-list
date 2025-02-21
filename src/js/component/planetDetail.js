@@ -29,14 +29,18 @@ export const PlanetDetail = () => {
                     <span className="visually-hidden">Cargando...</span>
                 </div>
             </div>
-        ); // Muestra el spinner de carga mientras se obtienen los datos
+        ); 
     }
 
     if (!planet) {
-        return <p className="nfd">Vehículo no encontrado.</p>; // Si no se encuentra el vehículo
+        return <div className="container">
+        <div className="alert alert-danger mt-5" role="alert">
+            <strong>Error:</strong> Planet not found error internal.
+        </div>
+    </div> 
     }
 
-    // Buscamos la imagen del vehículo según el ID
+    // Buscamos la imagen del planeta según el ID
     const imageUrl = data.planets.find(item => item.id === parseInt(uid))?.image || imgdefault;
 
     return (
@@ -63,7 +67,7 @@ export const PlanetDetail = () => {
                         </p>
                     </div>
                 </div>
-
+                    {/* detalles */}
                 <div className="card-footer">
                     <h5 className="info">Additional Info</h5>
                     <div className="d-flex flex-column flex-md-row justify-content-between">

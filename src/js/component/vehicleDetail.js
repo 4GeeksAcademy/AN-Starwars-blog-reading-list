@@ -30,11 +30,17 @@ export const VehicleDetail = () => {
                     <span className="visually-hidden">Cargando...</span>
                 </div>
             </div>
-        ); // Muestra el spinner de carga mientras se obtienen los datos
+        ); 
     }
 
     if (!vehicle) {
-        return <p className="nfd">Vehículo no encontrado.</p>; // Si no se encuentra el vehículo
+        return(
+            <div className="container">
+                <div className="alert alert-danger mt-5" role="alert">
+                    <strong>Error:</strong> Vehicle not found error internal.
+                </div>
+            </div>
+        ); 
     }
 
     // Buscamos la imagen del vehículo según el ID
@@ -50,8 +56,8 @@ export const VehicleDetail = () => {
                             src={imageUrl}
                             alt={vehicle.name}
                             className="img-fluid img_char"
-                            style={{ objectFit: 'cover', maxWidth: '540px'}}
-                            onError={(e)=>e.target.src = imgdefault}
+                            style={{ objectFit: 'cover', maxWidth: '540px' }}
+                            onError={(e) => e.target.src = imgdefault}
                         />
                     </div>
                     {/* Nombre y descripción */}
@@ -64,7 +70,7 @@ export const VehicleDetail = () => {
                         </p>
                     </div>
                 </div>
-
+                  {/* detalles */}
                 <div className="card-footer">
                     <h5 className="info">Additional Info:</h5>
                     <div className="d-flex flex-column flex-md-row justify-content-between">

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; // Para obtener el ID del personaje
+import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import data from "../component/imgdata.json";
 import imgdefault from '../../img/vader.png';
@@ -8,7 +8,7 @@ import imgdefault from '../../img/vader.png';
 export const CharacterDetail = () => {
     const { store, actions } = useContext(Context);
     const { uid } = useParams();
-    const [loading, setLoading] = useState(true); // Estado para mostrar la pantalla de carga
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         if (!store.character || store.character.uid !== uid) {
@@ -27,10 +27,14 @@ export const CharacterDetail = () => {
                 <div className="spinner-border" role="status">
                 </div>
             </div>
-        ); // Muestra el spinner de carga mientras se obtienen los datos
+        );
     }
     if (!character) {
-        return <p className="nfd">Personaje no encontrado.</p>; // Si no se encuentra el personaje
+        return <div className="container">
+            <div className="alert alert-danger mt-5" role="alert">
+                <strong>Error:</strong> Character not found error internal.
+            </div>
+        </div>
     }
     const imageUrl = data.characters.find(item => item.id === parseInt(uid))?.image || imgdefault;
 
