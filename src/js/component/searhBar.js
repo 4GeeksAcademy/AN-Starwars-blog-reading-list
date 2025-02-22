@@ -35,7 +35,7 @@ export const SearchBar = () => {
             setFilteredResults(results);
             setIsLoading(false); 
         }, 1000); 
-    }, [searchQuery]); 
+    }, []); 
 
   
     const handleChange = (e) => {

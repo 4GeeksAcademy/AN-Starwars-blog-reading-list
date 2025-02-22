@@ -32,23 +32,25 @@ export const CharacterDetail = () => {
     if (!character) {
         return <div className="container">
             <div className="alert alert-danger mt-5" role="alert">
-                <strong>Error:</strong> Character not found error internal.
+                <strong>Error:</strong> Character not found error internal swapapi.
             </div>
         </div>
     }
-    const imageUrl = data.characters.find(item => item.id === parseInt(uid))?.image || imgdefault;
+
+    const characterData = data.characters.find(item => item.id === parseInt(uid));
+    const imageUrl = characterData?.image || imgdefault;
+    const description = characterData?.description || "Description not available"
 
     return (
         <div className="container">
             <div className="card container mb-5">
                 <div className="d-flex flex-column flex-md-row p-4">
                     {/* Contenedor de la imagen */}
-                    <div className="image-container mb-3 mb-md-0 d-flex justify-content-center">
+                    <div className="image-container mb-3 mb-md-0 d-flex justify-content-center" style={{ maxWidth: '540px', width: '100%' }}>
                         <img
                             src={imageUrl}
                             alt={character.name}
                             className="img-fluid img_char"
-                            style={{ objectFit: 'cover', maxWidth: '540px' }}
                             onError={(e) => e.target.src = imgdefault}
                         />
                     </div>
@@ -59,7 +61,7 @@ export const CharacterDetail = () => {
                             {character ? character.name : "Cargando..."}
                         </h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.
+                            {description}
                         </p>
                     </div>
                 </div>
@@ -96,7 +98,5 @@ export const CharacterDetail = () => {
                 </div>
             </div>
         </div>
-
-
     );
 };

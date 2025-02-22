@@ -48,12 +48,11 @@ export const PlanetDetail = () => {
             <div className="card container mb-5">
                 <div className="d-flex flex-column flex-md-row p-4">
                     {/* Imagen en la izquierda */}
-                    <div className="image-container mb-3 mb-md-0 d-flex justify-content-center">
+                    <div className="image-container mb-3 mb-md-0 d-flex justify-content-center" style={{ maxWidth: '540px', width: '100%' }}>
                         <img
                             src={imageUrl}
                             alt={planet.name}
-                            className="img-fluid img_char"
-                            style={{ objectFit: 'cover', maxWidth: '540px'}}
+                            className="img-fluid img_planet"
                             onError={(e) => e.target.src = imgdefault}
                         />
                     </div>

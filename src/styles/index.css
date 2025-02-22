@@ -5,7 +5,7 @@
   --text-light: #ffeaaa;
   --text-dark: #ffd277;
   --background-color: black;
-  --card-background-color: rgba(58, 58, 58, 0.483);
+  --card-background-color: rgb(124, 128, 136);
   --button-hover-background: rgba(0, 0, 0, 0.842);
   --text-yellow: darkgoldenrod;
 }
@@ -17,7 +17,11 @@
 }
 
 body {
-  background-image: url("https://cdn.mos.cms.futurecdn.net/qrdd4YwhppY7NygBPvseeg.jpg");
+  background-image: url("https://res.cloudinary.com/dslt9nebs/image/upload/v1740190136/glow_galaxy_space_stars_black_sky_background_night_4k_hd_space_rftxrt.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  background-position: center;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -59,7 +63,7 @@ footer {
 }
 
 
-.char:hover{
+.char:hover {
   filter: drop-shadow(0px 0px 5px #e9ebeb);
 }
 
@@ -258,25 +262,27 @@ footer {
 
 
 .container {
-  background-color: black;
+  background-color: var(--card-background-color);
 
 }
 
 
 /*card detail info*/
 
-.img_char {
-  width: 540px;
-  height: 460px;
-  border-radius: 8px;
-  .contain {
-    object-fit: contain;
-  }
-  .cover {
-    object-fit: cover;
-  }
 
-  border: 5px solid #fff;
+.image-container .img-fluid.img_char {
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: 460px;
+  max-width: 540px;
+  max-height: 460px;
+  border: 2.5px solid #fff;
+}
+
+.image-container .img-fluid.img_planet {
+  object-fit: cover;
+  border: 2.5px solid #fff;
 }
 
 /* Contenedor de la imagen a la izquierda */
@@ -428,16 +434,19 @@ footer {
 
 .autocomplete-results {
   position: absolute;
-  top: 100%; /* Colocamos los resultados justo debajo del input */
+  top: 100%;
+  /* Colocamos los resultados justo debajo del input */
   left: 0;
   width: 100%;
   max-height: 200px;
   overflow-y: auto;
   background-color: white;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 100; /* Aseguramos que los resultados estén por encima de otros elementos */
+  z-index: 100;
+  /* Aseguramos que los resultados estén por encima de otros elementos */
   border-radius: 0.25rem;
-  margin-top: 0.5rem; /* Espacio entre el input y los resultados */
+  margin-top: 0.5rem;
+  /* Espacio entre el input y los resultados */
 }
 
 .autocomplete-results ul {

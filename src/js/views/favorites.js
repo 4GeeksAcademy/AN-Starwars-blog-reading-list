@@ -46,7 +46,7 @@ export const Favorites = () => {
     }, {});
     const hasFavorites = Object.keys(groupedFavorites).some((category) => groupedFavorites[category].length > 0);
     return (
-        <div className="container d-flex flex-column" style={{ minHeight: '100vh' }}>
+        <div className="container d-flex flex-column" style={{ backgroundColor:'black',  minHeight: '100vh' }}>
             {!hasFavorites ? (
                 <p className="flex-grow-1 nfd d-flex flex-column align-items-center justify-content-center text-center">
                     No tienes nada de favoritos.

@@ -3,7 +3,8 @@
     {
       "id": 1,
       "name": "Luke Skywalker",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913386/star-wars-luke-skywalker-1024x768-video-games-star-wars-hd-art-wallpaper-preview_t6owu2.jpg"
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913386/star-wars-luke-skywalker-1024x768-video-games-star-wars-hd-art-wallpaper-preview_t6owu2.jpg",
+      "description": "A young farmer who becomes the main hero of the Rebellion, fighting against the Galactic Empire. He becomes a legendary Jedi, known for his skill with the lightsaber and for being the son of Anakin Skywalker."
     },
     {
       "id": 2,
