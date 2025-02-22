@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import data from "../component/imgdata.json";
+import data from "../data/planets/planets.json";
 import imgdefault from '../../img/vader.png';
+
 
 export const PlanetDetail = () => {
     const { store, actions } = useContext(Context);
@@ -29,19 +30,20 @@ export const PlanetDetail = () => {
                     <span className="visually-hidden">Cargando...</span>
                 </div>
             </div>
-        ); 
+        );
     }
 
     if (!planet) {
         return <div className="container">
-        <div className="alert alert-danger mt-5" role="alert">
-            <strong>Error:</strong> Planet not found error internal.
+            <div className="alert alert-danger mt-5" role="alert">
+                <strong>Error:</strong> Planet not found error internal.
+            </div>
         </div>
-    </div> 
     }
 
-    // Buscamos la imagen del planeta según el ID
-    const imageUrl = data.planets.find(item => item.id === parseInt(uid))?.image || imgdefault;
+    const characterData = data.find(item => item.id === parseInt(uid));
+    const imageUrl = characterData?.image || imgdefault;
+    const description = characterData?.description || "Description not available"
 
     return (
         <div className="container">
@@ -62,11 +64,11 @@ export const PlanetDetail = () => {
                             {planet ? planet.name : "Cargando..."}
                         </h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.
+                            {description}
                         </p>
                     </div>
                 </div>
-                    {/* detalles */}
+                {/* detalles */}
                 <div className="card-footer">
                     <h5 className="info">Additional Info</h5>
                     <div className="d-flex flex-column flex-md-row justify-content-between">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
-import { SearchBar } from './searhBar';
+
 
 export const Navbar = () => {
 	const navigate = useNavigate();
@@ -88,7 +88,6 @@ export const Navbar = () => {
 							</NavLink>
 						</li>
 					</ul>
-					<SearchBar/>
 				</div>
 			</nav>
 			<hr className="navbar-divider" />

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import data from "../component/imgdata.json";
+import data from "../data/characters/characters.json";
 import imgdefault from '../../img/vader.png';
 
 
@@ -37,7 +37,7 @@ export const CharacterDetail = () => {
         </div>
     }
 
-    const characterData = data.characters.find(item => item.id === parseInt(uid));
+    const characterData = data.find(item => item.id === parseInt(uid));
     const imageUrl = characterData?.image || imgdefault;
     const description = characterData?.description || "Description not available"
 

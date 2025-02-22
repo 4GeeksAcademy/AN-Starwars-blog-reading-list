@@ -13,9 +13,9 @@ export const Characters = () => {
   return (
     <>
     <div className="container d-flex flex-wrap justify-content-center">
-    {store.characters.map((character, index) => (
+    {store.characters.map((character) => (
                     <Card 
-                        key={index} 
+                        key={character.uid} 
                         name={character.name} 
                         uid={character.uid} 
                         detailsUrl={character.url} 

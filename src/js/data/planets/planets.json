@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "name": "Tatooine",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282198/Tatooine_TPM_z5i4jj.webp"
+    },
+    {
+      "id": 2,
+      "name": "Alderaan",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282227/Alderaan_xyrgkc.webp"
+    },
+    {
+      "id": 3,
+      "name": "Yavin IV",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282262/Yavin-4-SWCT_j4zk5k.webp"
+    },
+    {
+      "id": 4,
+      "name": "Hoth",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282362/Hoth_SWCT_trft78.webp"
+    },
+    {
+      "id": 5,
+      "name": "Dagobah",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282370/Dagobah-CGSWG_nadhz9.webp"
+    },
+    {
+      "id": 6,
+      "name": "Bespin",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282376/Bespin-SWCT_arha2g.webp"
+    },
+    {
+      "id": 7,
+      "name": "Endor",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282488/Endor_BF2_ysexjl.webp"
+    },
+    {
+      "id": 8,
+      "name": "Naboo",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282508/Naboo_planet_ecxtdb.webp"
+    },
+    {
+      "id": 9,
+      "name": "Coruscant",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282512/CoruscantGlobeE1_ndhv3q.webp"
+    },
+    {
+      "id": 10,
+      "name": "Kamino",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282483/Kamino-DB_vej0bw.webp"
+    }
+  ]

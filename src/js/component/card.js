@@ -1,7 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { Context } from "../store/appContext";
-import data from '../component/imgdata.json';
+import characterData from '../data/characters/characters.json';
+import planetData from '../data/planets/planets.json'
+import vehicleData from '../data/vehicles/vehicle.json'
 import imgdefault from '../../img/vader.png'
 export const Card = ({ name, uid, category, detailsUrl, onToggleFavorite }) => {
     const navigate = useNavigate();
@@ -9,16 +11,30 @@ export const Card = ({ name, uid, category, detailsUrl, onToggleFavorite }) => {
     const [isFavorite, setIsFavorite] = useState(false);
     // Buscar imagen correspondiente
     const getImageByCategoryAndId = (category, uid) => {
-        const categoryData = data[category]; // 'characters', 'planets', or 'vehicles'
-        if (!categoryData) {
-            return imgdefault;
+        let categoryData = [];
+        switch (category) {
+            case 'characters':
+                categoryData = characterData;
+                break;
+            case 'planets':
+                categoryData = planetData;
+                break;
+            case 'vehicles':
+                categoryData = vehicleData;
+                break
+            default:
+                return imgdefault;
         }
+
         const item = categoryData.find(item => String(item.id) === String(uid));
         if (!item) {
             return imgdefault;
         }
         return item.image;
+
     };
+
+
 
     useEffect(() => {
         const favorites = JSON.parse(localStorage.getItem("favorites")) || [];

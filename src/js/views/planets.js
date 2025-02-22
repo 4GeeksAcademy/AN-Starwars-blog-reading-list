@@ -12,9 +12,9 @@ export const Planets = () => {
 
   return (
     <div className="container d-flex flex-wrap justify-content-center">
-      {store.planets.map((planet, index) => (
+      {store.planets.map((planet) => (
         <Card
-          key={index}
+          key={planet.uid}
           name={planet.name}
           uid={planet.uid}
           detailsUrl={planet.url}

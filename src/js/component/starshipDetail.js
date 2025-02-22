@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import imgdefault from '../../img/vader.png'; 
+import imgdefault from '../../img/vader.png';
 
 export const StarshipDetail = () => {
     const { store, actions } = useContext(Context);
-    const { uid } = useParams(); 
+    const { uid } = useParams();
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -47,10 +47,10 @@ export const StarshipDetail = () => {
                     {/* Contenedor de la imagen */}
                     <div className="image-container mb-3 mb-md-0 d-flex justify-content-center" style={{ maxWidth: '540px', width: '100%' }}>
                         <img
-                            src={imgdefault} 
+                            src={imgdefault}
                             alt={starship.name}
                             className="img-fluid img_char"
-                            onError={(e) => e.target.src = imgdefault} 
+                            onError={(e) => e.target.src = imgdefault}
                         />
                     </div>
 

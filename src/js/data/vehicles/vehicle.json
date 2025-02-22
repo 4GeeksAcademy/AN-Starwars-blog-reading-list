@@ -1,0 +1,52 @@
+[
+    {
+      "id": "4",
+      "name": "Sand Crawler",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739284549/Sandcrawler-TMCh9_xs57uw.webp"
+    },
+    {
+      "id": "7",
+      "name": "X-34 landspeeder",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283665/X-34_landspeeder_EtU_pxsa6z.webp"
+    },
+    {
+      "id": "6",
+      "name": "T-16 skyhopper",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283669/T-16_skyhopper_-_SW_20_bzvhbh.webp"
+    },
+    {
+      "id": "8",
+      "name": "TIE/LN starfighter",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283675/7dceaf32b1d50effb58a48a11c20bf30e3988dc3r1-1080-1080v2_00_jfzf6o.jpg"
+    },
+    {
+      "id": "14",
+      "name": "Snowspeeder",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283678/T-47_Speeder_DICE_im5pnj.webp"
+    },
+    {
+      "id": "18",
+      "name": "AT-AT",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283685/ATAT-CHRON_lx4kae.webp"
+    },
+    {
+      "id": "16",
+      "name": "TIE bomber",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283672/TIE_Bomber_BF2_pogxry.webp"
+    },
+    {
+      "id": "19",
+      "name": "AT-ST",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283681/ATST-SWBdice_im4bnc.webp"
+    },
+    {
+      "id": "20",
+      "name": "Storm IV Twin-Pod cloud car",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283661/Storm_IV_Cloud_Car_EotECR_g19f1h.webp"
+    },
+    {
+      "id": "24",
+      "name": "Sail barge",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739283649/Sailbarge_negvv_mfpaiv.webp"
+    }
+  ]

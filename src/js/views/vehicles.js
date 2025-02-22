@@ -11,9 +11,9 @@ export const Vehicles = () => {
   }, []);
   return (
     <div className="container d-flex flex-wrap justify-content-center">
-      {store.vehicles.map((vehicle, index) => (
+      {store.vehicles.map((vehicle) => (
         <Card
-          key={index}
+          key={vehicle.uid}
           name={vehicle.name}
           uid={vehicle.uid}
           detailsUrl={vehicle.url}

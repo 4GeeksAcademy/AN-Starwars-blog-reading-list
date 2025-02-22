@@ -1,0 +1,53 @@
+[
+    {
+      "id": 1,
+      "name": "Luke Skywalker",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913386/star-wars-luke-skywalker-1024x768-video-games-star-wars-hd-art-wallpaper-preview_t6owu2.jpg",
+      "description": "A young farmer who becomes the main hero of the Rebellion, fighting against the Galactic Empire. He becomes a legendary Jedi, known for his skill with the lightsaber and for being the son of Anakin Skywalker."
+    },
+    {
+      "id": 2,
+      "name": "C-3PO",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913630/c3po_pevo37.jpg"
+    },
+    {
+      "id": 3,
+      "name": "R2-D2",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913224/360_F_928173610_MDO4XGYmOJ2685TTwhNW2Y1vktrWh8kX_hqt6zd.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Darth Vader",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739387766/360_F_313367965_7B8Y7JrJ3JAG6zdjw51L59kVQZMlA9K7_unieg9.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Leia Organa",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913051/Leia_mr3xvp.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Owen Lars",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739281661/Owen-OP_aftfgw.webp"
+    },
+    {
+      "id": 7,
+      "name": "Beru Whitesun Lars",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739281577/th_dbusfe.jpg"
+    },
+    {
+      "id": 8,
+      "name": "R5-D4",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1740075060/r5-d4_main_image_7d5f078e_moqtgr.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Biggs Darklighter",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739281573/Swk_biggs_koprp3.webp"
+    },
+    {
+      "id": 10,
+      "name": "Obi-Wan Kenobi",
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739912993/16535987822078_nxgijr.jpg"
+    }
+]

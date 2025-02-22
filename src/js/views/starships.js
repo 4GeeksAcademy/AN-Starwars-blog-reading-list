@@ -12,9 +12,9 @@ export const Starships = () => {
 
   return (
     <div className="container d-flex flex-wrap justify-content-center">
-      {store.starships.map((starship, index) => (
+      {store.starships.map((starship) => (
         <Card
-          key={index}
+          key={starship.uid}
           name={starship.name}
           uid={starship.uid}
           detailsUrl={starship.url}

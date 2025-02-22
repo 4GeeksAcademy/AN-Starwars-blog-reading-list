@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import data from "../component/imgdata.json";
 import imgdefault from '../../img/vader.png';
 
 export const VehicleDetail = () => {
