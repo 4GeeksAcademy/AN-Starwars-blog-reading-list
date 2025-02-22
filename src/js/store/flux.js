@@ -7,10 +7,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			vehicles: [],
 			planets: [],
+			starships:[],
 			favorites: [],
 			character: {},
 			planet: {},
 			vehicle: {},
+			starship:{},
 			loading: false,
 		},
 		actions: {
@@ -113,6 +115,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				catch (error) {
 					setStore({ planet: null, error: true})
+				} finally {
+					setStore({ loading: false });
+				}
+			},
+			getInitialStarships: async () => {
+				const store = getStore();
+				if (store.starships.length > 0) {
+					return;
+				}
+				try {
+					setStore({ loading: true });
+					const response = await fetch(`https://www.swapi.tech/api/starships`);
+					if (!response.ok) throw Error(`starships no encontrados`);
+					const data = await response.json();
+					setStore({ starships: data.results });
+				}
+				catch (error) {
+					console.error(error);
+				} finally {
+					setStore({ loading: false });
+				}
+			},
+			getStarshipsByid: async (id) => {
+				const actions = getActions();
+				actions.setLoading(true)
+				try {
+					setStore({ loading: true });
+					const response = await fetch(`https://www.swapi.tech/api/starships/${id}`);
+					if (!response.ok) throw Error(`Starship no encontrado`);
+					const data = await response.json();
+					setStore({ starship: data.result.properties });
+				}
+				catch (error) {
+					setStore({ starship: null, error: true})
 				} finally {
 					setStore({ loading: false });
 				}

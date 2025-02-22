@@ -59,6 +59,16 @@ export const Navbar = () => {
 						</li>
 						<li className="nav-item">
 							<NavLink
+								to="/starships"
+								className={({ isActive }) =>
+									`navlink text-decoration-none mx-3 ${isActive ? "active-link" : ""}`
+								}
+							>
+								<strong>STARSHIPS</strong>
+							</NavLink>
+						</li>
+						<li className="nav-item">
+							<NavLink
 								to="/vehicles"
 								className={({ isActive }) =>
 									`navlink text-decoration-none mx-3 ${isActive ? "active-link" : ""}`
