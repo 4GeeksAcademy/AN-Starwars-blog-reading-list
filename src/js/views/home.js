@@ -1,69 +1,90 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import starWarsTheme from "../../audio/StarWarsMainTheme.mp3";
+import 'animate.css'
+import '../../styles/intro.css'
 
-// Importamos los iconos de Bootstrap
-import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 
 export const Home = () => {
   const [showText, setShowText] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(true); // Estado para saber si la música está sonando
-  const [volume, setVolume] = useState(0.5); // Control del volumen (0.0 a 1.0)
-  const [isMuted, setIsMuted] = useState(false); // Control del mute
-  const audioRef = useRef(null); // Referencia al audio
+  const [showWelcome, setShowWelcome] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [volume, setVolume] = useState(0.5); 
+  const [isMuted, setIsMuted] = useState(false); 
+  const audioRef = useRef(null); 
 
+  const scroll =  window.scrollTo({
+    top:window.innerHeight / 2,
+    behavior: "smooth",
+  });
   useEffect(() => {
     // Reproducir la música de Star Wars al cargar
     const audio = new Audio(starWarsTheme);
     audioRef.current = audio;
-    audio.volume = volume; // Establecer el volumen inicial
-    audio.play();
+    audio.volume = volume; 
+    audioRef.current.play();
+    audio.loop = true;
+    
+
+    scroll;
 
     // Mostrar el texto después de 3 segundos
     const timer = setTimeout(() => {
       setShowText(true);
+      setShowWelcome(false);
     }, 3000);
 
+    audioRef.current.onended = () => {
+      audio.play(); 
+      setShowText(false); 
+      setTimeout(() => {
+        setShowText(true); 
+      }, 1000);
+    };
     // Detener la música cuando el componente se desmonta
     return () => {
       clearTimeout(timer);
       audio.pause();
     };
-  }, []); // Reproducir y cambiar volumen si cambia
+  }, []); 
 
-  const toggleMusic = () => {
-    if (audioRef.current.paused) {
-      audioRef.current.play();
-      setIsPlaying(true);
-    } else {
-      audioRef.current.pause();
-      setIsPlaying(false);
+  const increaseVolume = () => {
+    setVolume(1);
+    if(audioRef.current){
+     audioRef.current.volume = 1;
     }
   };
 
-  const increaseVolume = (e) => {
+  const decreseVolume = ()=>{
+    if (!isMuted){
+      setVolume(0);
+      if (audioRef.current){
+        audioRef.current.volume = 0;
+      }
+      setIsMuted(true);
+    } else{
+      setVolume(0.1);
+      if (audioRef.current){
+        audioRef.current.volume = 0.1;
+      }
+      setIsMuted(false);
+    }
+  };
+  const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
-    audioRef.current.volume = newVolume;
-  };
-
-  const toggleMute = () => {
-    if (isMuted) {
-      audioRef.current.volume = volume; // Restaurar volumen cuando desmuteamos
-      setIsMuted(false);
-    } else {
-      audioRef.current.volume = 0; // Silenciar
-      setIsMuted(true);
+    if (audioRef.current) {
+      audioRef.current.volume = newVolume;
     }
   };
+
 
   return (
     <div className="home-container">
       {/* Mensaje de bienvenida */}
-      <div className="welcome-message">
+      {showWelcome &&(<div className="welcome-message">
         <h1 className="animate__animated animate__fadeIn">Bienvenido al Blog de Star Wars</h1>
       </div>
-
+)}
       {/* Mostrar los textos de Star Wars después de 3 segundos */}
       {showText && (
         <div className="star-wars-text">
@@ -83,29 +104,19 @@ export const Home = () => {
         </div>
       )}
 
-      {/* Controles de música en la parte superior derecha */}
-      <div className="music-controls position-fixed top-0 end-0 m-3 p-2 bg-dark text-white rounded">
-        <button onClick={toggleMusic} className="btn btn-light btn-sm m-1">
-          {isPlaying ? <FaPause /> : <FaPlay />}
-        </button>
-
-        {/* Barra de volumen */}
-        <input
-          type="range"
-          min="0"
+<div id="player">
+		<i className="fa fa-volume-down" onClick={increaseVolume}></i>
+    <input type="range" min="0"
           max="1"
-          step="0.1"
+          step="0.01"
           value={volume}
-          onChange={increaseVolume}
-          className="form-range"
-          style={{ width: "150px" }}
-        />
-
-        {/* Botón de mute */}
-        <button onClick={toggleMute} className="btn btn-light btn-sm m-1">
-          {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-        </button>
-      </div>
+          onChange={handleVolumeChange}
+          />
+    <i
+          className={`fa ${isMuted || volume === 0 ? 'fa-volume-off' : 'fa-volume-down'}`}
+          onClick={decreseVolume}
+        ></i>
+	</div>
     </div>
   );
 };

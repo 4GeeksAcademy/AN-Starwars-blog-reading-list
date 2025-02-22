@@ -3,27 +3,31 @@
       "id": 1,
       "name": "Luke Skywalker",
       "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913386/star-wars-luke-skywalker-1024x768-video-games-star-wars-hd-art-wallpaper-preview_t6owu2.jpg",
-      "description": "A young farmer who becomes the main hero of the Rebellion, fighting against the Galactic Empire. He becomes a legendary Jedi, known for his skill with the lightsaber and for being the son of Anakin Skywalker."
+      "description": "Luke Skywalker es un joven granjero que se convierte en el héroe principal de la Rebelión, luchando contra el Imperio Galáctico. Es un Jedi legendario, conocido por su habilidad con el sable de luz y por ser hijo de Anakin Skywalker. Su sable de luz es de color verde en *El regreso del Jedi*. Luke pertenece a la Rebelión (más tarde, Jedi). Aparece en *Star Wars: Una nueva esperanza*, *El Imperio contraataca*, *El retorno del Jedi* y *El ascenso de Skywalker*."
     },
     {
       "id": 2,
       "name": "C-3PO",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913630/c3po_pevo37.jpg"
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913630/c3po_pevo37.jpg",
+      "description": "C-3PO es un droide de protocolo, conocido por su capacidad para hablar múltiples idiomas y por su compañía a R2-D2. Aunque no tiene sable de luz, es uno de los personajes más icónicos de la saga. C-3PO pertenece a la Rebelión (más tarde, Resistencia). Aparece en *Star Wars: Una nueva esperanza*, *El Imperio contraataca*, *El retorno del Jedi*, *La amenaza fantasma*, *El ataque de los clones*, *La venganza de los Sith*, *El despertar de la Fuerza*, *Los últimos Jedi* y *El ascenso de Skywalker*."      
     },
     {
       "id": 3,
       "name": "R2-D2",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913224/360_F_928173610_MDO4XGYmOJ2685TTwhNW2Y1vktrWh8kX_hqt6zd.jpg"
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913224/360_F_928173610_MDO4XGYmOJ2685TTwhNW2Y1vktrWh8kX_hqt6zd.jpg",
+      "description": "R2-D2 es un droide astromecánico vital para las misiones de la Rebelión. A pesar de no hablar, su valor es incalculable en la lucha contra el Imperio. No tiene sable de luz, pero cumple una función clave en la saga. R2-D2 pertenece a la Rebelión (más tarde, Resistencia). Aparece en *Star Wars: Una nueva esperanza*, *El Imperio contraataca*, *El retorno del Jedi*, *La amenaza fantasma*, *El ataque de los clones*, *La venganza de los Sith*, *El despertar de la Fuerza*, *Los últimos Jedi* y *El ascenso de Skywalker*."
     },
     {
       "id": 4,
       "name": "Darth Vader",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739387766/360_F_313367965_7B8Y7JrJ3JAG6zdjw51L59kVQZMlA9K7_unieg9.jpg"
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739387766/360_F_313367965_7B8Y7JrJ3JAG6zdjw51L59kVQZMlA9K7_unieg9.jpg",
+      "description": "Darth Vader, anteriormente conocido como Anakin Skywalker, es uno de los villanos más temidos de la galaxia. Un Jedi que se pasa al lado oscuro y se convierte en un Sith, sirviendo como brazo derecho del Imperio Galáctico. Su sable de luz es de color rojo. Darth Vader pertenece al Imperio Galáctico (más tarde, Sith). Aparece en *Star Wars: Una nueva esperanza*, *El Imperio contraataca*, *El retorno del Jedi*, *La amenaza fantasma*, *El ataque de los clones*, *La venganza de los Sith*."
     },
     {
       "id": 5,
       "name": "Leia Organa",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913051/Leia_mr3xvp.jpg"
+      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739913051/Leia_mr3xvp.jpg",
+      "description": "Leia Organa es una líder de la Rebelión, hermana gemela de Luke Skywalker. A pesar de ser una princesa, se involucra activamente en la lucha contra el Imperio, mostrando gran valentía y habilidad en combate. Leia no posee sable de luz. Pertenece a la Rebelión (más tarde, Resistencia). Aparece en *Star Wars: Una nueva esperanza*, *El Imperio contraataca*, *El retorno del Jedi*, *El despertar de la Fuerza*, *Los últimos Jedi* y *El ascenso de Skywalker*. "
     },
     {
       "id": 6,

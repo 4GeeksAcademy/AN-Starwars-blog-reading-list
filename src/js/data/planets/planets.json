@@ -1,52 +1,57 @@
 [
     {
-      "id": 1,
-      "name": "Tatooine",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282198/Tatooine_TPM_z5i4jj.webp"
+        "id": 1,
+        "name": "Tatooine",
+        "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282198/Tatooine_TPM_z5i4jj.webp",
+        "description": "Tatooine es un planeta desértico y remoto, conocido por ser el hogar de Luke Skywalker y Anakin Skywalker. Es un lugar clave en la saga, ya que fue donde Luke comenzó su viaje como héroe. Aparece en *Star Wars: Una nueva esperanza*, *El ataque de los clones* y otras películas. Su clima árido y sus dos soles lo hacen un planeta inhóspito y desolado, pero de gran importancia en la historia de Star Wars."
     },
     {
-      "id": 2,
-      "name": "Alderaan",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282227/Alderaan_xyrgkc.webp"
+        "id": 2,
+        "name": "Alderaan",
+        "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282227/Alderaan_xyrgkc.webp",
+        "description": "Alderaan es un planeta pacífico y próspero, conocido por su belleza natural y su inteligencia política. Fue destruido por el Imperio Galáctico con la primera Estrella de la Muerte. La princesa Leia Organa, una de las principales heroínas de la Rebelión, es originaria de Alderaan. Aparece en *Star Wars: Una nueva esperanza*, siendo destruido en los primeros momentos de la película."
     },
     {
-      "id": 3,
-      "name": "Yavin IV",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282262/Yavin-4-SWCT_j4zk5k.webp"
+        "id": 3,
+        "name": "Yavin IV",
+        "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282262/Yavin-4-SWCT_j4zk5k.webp",
+        "description": "Yavin IV es una luna del planeta Yavin, famosa por ser la base secreta de la Rebelión durante la Guerra Civil Galáctica. Fue en este planeta donde los rebeldes lanzaron el ataque decisivo contra la primera Estrella de la Muerte. Aparece en *Star Wars: Una nueva esperanza*, siendo un lugar crucial para los eventos de la Rebelión."
     },
     {
-      "id": 4,
-      "name": "Hoth",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282362/Hoth_SWCT_trft78.webp"
+        "id": 4,
+        "name": "Hoth",
+        "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282362/Hoth_SWCT_trft78.webp",
+        "description": "Hoth es un planeta helado y desolado, famoso por ser la ubicación de la base secreta de la Rebelión durante el conflicto con el Imperio. Es conocido por su clima extremo, con grandes tormentas de nieve y temperaturas bajo cero. Aparece en *Star Wars: El Imperio contraataca*, donde la Rebelión lucha por sobrevivir ante el ataque del Imperio en este inhóspito mundo."
     },
     {
-      "id": 5,
-      "name": "Dagobah",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282370/Dagobah-CGSWG_nadhz9.webp"
+        "id": 5,
+        "name": "Dagobah",
+        "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282370/Dagobah-CGSWG_nadhz9.webp",
+        "description": "Dagobah es un planeta pantanoso y selvático donde Yoda se exilió después de la caída de la Orden Jedi. Es un lugar misterioso y lleno de vida, pero muy difícil de navegar debido a sus pantanos y criaturas salvajes. Luke Skywalker entrena aquí con Yoda en *El Imperio contraataca* y *El regreso del Jedi*. Es clave para el desarrollo de Luke como Jedi."
     },
     {
-      "id": 6,
-      "name": "Bespin",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282376/Bespin-SWCT_arha2g.webp"
+        "id": 6,
+        "name": "Bespin",
+        "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282376/Bespin-SWCT_arha2g.webp"
     },
     {
-      "id": 7,
-      "name": "Endor",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282488/Endor_BF2_ysexjl.webp"
+        "id": 7,
+        "name": "Endor",
+        "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282488/Endor_BF2_ysexjl.webp"
     },
     {
-      "id": 8,
-      "name": "Naboo",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282508/Naboo_planet_ecxtdb.webp"
+        "id": 8,
+        "name": "Naboo",
+        "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282508/Naboo_planet_ecxtdb.webp"
     },
     {
-      "id": 9,
-      "name": "Coruscant",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282512/CoruscantGlobeE1_ndhv3q.webp"
+        "id": 9,
+        "name": "Coruscant",
+        "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282512/CoruscantGlobeE1_ndhv3q.webp"
     },
     {
-      "id": 10,
-      "name": "Kamino",
-      "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282483/Kamino-DB_vej0bw.webp"
+        "id": 10,
+        "name": "Kamino",
+        "image": "https://res.cloudinary.com/dslt9nebs/image/upload/v1739282483/Kamino-DB_vej0bw.webp"
     }
-  ]
+]

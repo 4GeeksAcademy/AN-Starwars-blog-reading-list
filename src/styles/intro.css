@@ -1,0 +1,81 @@
+.home-container {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    filter: drop-shadow(0px 0px 55px #b6f85fc9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.welcome-message h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+.star-wars-text {
+    text-align: center;
+    color: #face1d;
+    user-select: none;
+    animation: moveText 40s linear infinite;
+}
+
+.star-wars-title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+    animation: txtAnimation 5s ease-out forwards;
+}
+
+.star-wars-subtitle {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    animation: txtAnimation 5s ease-out forwards;
+}
+
+.star-wars-scroll {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    animation: txtAnimation 40s linear infinite;
+    text-align: center;
+
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveText {
+    0% {
+        transform: perspective(500px) rotateX(30deg) translateY(100vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: perspective(500px) rotateX(30deg) translateY(-80vh);
+        opacity: 0;
+    }
+}
+
+@keyframes txtAnimation {
+    0% {
+        transform: rotateX(30deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
